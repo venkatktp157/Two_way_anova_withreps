@@ -1,0 +1,11 @@
+# Environments
+.env
+venv/
+__pycache__/
+
+# Streamlit
+.streamlit/
+
+# OS specific
+.DS_Store
+Thumbs.db
