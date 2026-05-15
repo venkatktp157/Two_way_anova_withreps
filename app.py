@@ -157,39 +157,7 @@ if uploaded_file is not None:
                     st.info(res.choices[0].message.content)
                 except Exception as e:
                     st.error(f"AI Error: {e}")    
-
-    # # 8. CONSOLIDATED AI INFERENCE
-    # st.markdown("---")
-    # if st.button("Generate Strategic AI Report"):
-    #     if GROQ_API_KEY:
-    #         with st.spinner("Analyzing Variance & Interactions..."):
-    #             prompt = f"""
-    #             You are a Senior Statistician. Analyze this Two-Way ANOVA (with Replications) results.
-                
-    #             CONTEXT: {user_context}
-    #             FACTOR A (Rows): {factor_a_col} (p={p_a:.4f})
-    #             FACTOR B (Columns): {factor_b_cols} (p={p_b:.4f})
-    #             INTERACTION EFFECT: p={p_inter:.4f}
-    #             ALPHA: {alpha}
-                
-    #             SIGNIFICANT PAIRWISE DIFFERENCES:
-    #             {tukey_text}
-
-    #             REQUIRED TASKS:
-    #             1. Executive Summary: Is there a significant interaction? Explain what that means for {user_context}.
-    #             2. Factor Comparison: Which factor (A or B) had the strongest influence?
-    #             3. Best Combination: Based on means and significance, which specific combination is the 'Winner'?
-    #             4. Strategic Recommendation: 3 bullet points for a stakeholder using the names from the context.
-    #             """
-    #             try:
-    #                 res = client.chat.completions.create(
-    #                     model="llama-3.3-70b-versatile",
-    #                     messages=[{"role": "user", "content": prompt}],
-    #                     temperature=0.2
-    #                 )
-    #                 st.info(res.choices[0].message.content)
-    #             except Exception as e:
-    #                 st.error(f"AI Error: {e}")
+    
         else:
             st.error("API Key missing.")
 else:
